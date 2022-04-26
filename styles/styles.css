@@ -1,16 +1,21 @@
+:root {
+  --page-header-height: 80px;
+  --text-color: #343434;
+  --text-color-content: #7e7e7e;
+  --bg-color:#f7f7f7;
+  --bg-color-hover:#f0f0f0;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-}
-
-:root {
-  --text-color: #343434;
+  color: var(--text-color);
 }
 
 html {
-  background: #f7f7f7;
+  background: var(--bg-color);
 }
 
 .page-header {
@@ -18,8 +23,8 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  height: 72px;
-  box-shadow: 0 0 12px #0004;
+  height: var(--page-header-height);
+  box-shadow: 0 0 16px #0002;
 }
 
 .page-header .wrapper {
@@ -27,6 +32,11 @@ html {
   justify-content: space-between;
   height: 100%;
   align-items: center;
+}
+
+.page-title {
+  font-weight: 900;
+  font-style: italic;
 }
 
 .page-menus,
@@ -52,7 +62,7 @@ html {
 }
 
 .page-menus ul li a:hover {
-  background: #f0f0f0;
+  background: var(--bg-color-hover);
 }
 
 .wrapper {
@@ -64,4 +74,71 @@ html {
 
 main {
   min-height: 100vh;
+  padding: 48px 24px;
+  padding-top: calc(var(--page-header-height) + 48px);
+}
+
+.content-description {
+  max-width: 800px;
+}
+section {
+  margin-top: 24px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+}
+
+.section-title {
+  letter-spacing: 2px;
+  color: var(--text-color-content)  ;
+}
+
+.text {
+  margin-top: 24px;
+  color: var(--text-color-content);
+}
+
+.video-with-description {
+  margin-top: 24px;
+  display: flex;
+}
+
+.youtube-video {
+  width: 60%;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.youtube-video iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.video-description {
+  margin-left: 24px;
+  width: 40%;
+}
+
+.background-text {
+  position: relative;
+  overflow: hidden;
+}
+.background-text * {
+  z-index: 1;
+}
+
+.background-text::before{
+  position: absolute;
+  display: block;
+  right: -120px;
+  bottom: -40px;
+  font-size: 56px;
+  line-height: 56px;
+  z-index: 0;
+  font-weight: 900;
+  color: var(--bg-color);
+  max-width: 560px;
+  transform: rotate(-30deg);
+  content: "THIS IS BEATBOX THIS IS BEATBOX THIS IS BEATBOX THIS IS BEATBOX THIS IS BEATBOX";
 }
