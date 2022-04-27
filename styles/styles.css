@@ -4,6 +4,8 @@
   --text-color-content: #7e7e7e;
   --bg-color:#f7f7f7;
   --bg-color-hover:#f0f0f0;
+  --white: white;
+  --light-gray: #d9d9d9;
 }
 
 * {
@@ -25,6 +27,8 @@ html {
   right: 0;
   height: var(--page-header-height);
   box-shadow: 0 0 16px #0002;
+  background: var(--bg-color);
+  z-index: 10;
 }
 
 .page-header .wrapper {
@@ -81,10 +85,10 @@ main {
 .content-description {
   max-width: 800px;
 }
-section {
+section.content {
   margin-top: 24px;
   padding: 24px;
-  background: white;
+  background: var(--white);
   border-radius: 12px;
 }
 
@@ -120,6 +124,10 @@ section {
   width: 40%;
 }
 
+.video-description h4 {
+  font-size: 24px;
+}
+
 .background-text {
   position: relative;
   overflow: hidden;
@@ -142,3 +150,62 @@ section {
   transform: rotate(-30deg);
   content: "THIS IS BEATBOX THIS IS BEATBOX THIS IS BEATBOX THIS IS BEATBOX THIS IS BEATBOX";
 }
+
+.beatbox-categories {
+  margin-top: 24px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+}
+
+.beatbox-category-card {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beatbox-category-card .info {
+  position: absolute;
+  z-index: 1;
+  padding: 24px;
+}
+
+.beatbox-category-card .info p.label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.beatbox-category-card .info span.beatbox-category-solo {
+  color: var(--light-gray);
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  padding-top: 0;
+  text-shadow: #000 1px 0 10px;
+}
+
+.beatbox-category-card:hover .info span.beatbox-category-solo {
+  max-height: 200px;
+  opacity: 1;
+  padding-top: 12px;
+}
+
+.beatbox-category-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: grayscale(1) brightness(0.7);
+  display: block;
+}
+
+
