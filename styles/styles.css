@@ -31,8 +31,8 @@ html {
   left: 0;
   right: 0;
   height: var(--page-header-height);
-  box-shadow: 0 0 16px #0002;
-  background: var(--bg-color);
+  box-shadow: 0 0 16px #0000000A;
+  background: var(--white);
   z-index: 10;
 }
 
