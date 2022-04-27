@@ -6,6 +6,9 @@
   --bg-color-hover:#f0f0f0;
   --white: white;
   --light-gray: #d9d9d9;
+  --space-sm: 12px;
+  --space: 24px;
+  --space-lg: 48px;
 }
 
 * {
@@ -56,7 +59,7 @@ html {
 }
 
 .page-menus ul li a {
-  padding: 0 12px;
+  padding: 0 var(--space-sm);
   display: flex;
   align-items: center;
   color: var(--text-color);
@@ -73,37 +76,37 @@ html {
   margin: 0 auto;
   width: 100%;
   max-width: 1192px;
-  padding: 0 24px;
+  padding: 0 var(--space);
 }
 
 main {
   min-height: 100vh;
-  padding: 48px 24px;
-  padding-top: calc(var(--page-header-height) + 48px);
+  padding: var(--space-lg) var(--space);
+  padding-top: calc(var(--page-header-height) + var(--space-lg));
 }
 
 .content-description {
   max-width: 800px;
 }
 section.content {
-  margin-top: 24px;
-  padding: 24px;
+  margin-top: var(--space);
+  padding: var(--space);
   background: var(--white);
-  border-radius: 12px;
+  border-radius: var(--space-sm);
 }
 
 .section-title {
   letter-spacing: 2px;
-  color: var(--text-color-content)  ;
+  color: var(--text-color-content);
 }
 
 .text {
-  margin-top: 24px;
+  margin-top: var(--space);
   color: var(--text-color-content);
 }
 
 .video-with-description {
-  margin-top: 24px;
+  margin-top: var(--space);
   display: flex;
 }
 
@@ -111,7 +114,7 @@ section.content {
   width: 60%;
   height: 360px;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: var(--space-sm);
 }
 
 .youtube-video iframe {
@@ -120,12 +123,12 @@ section.content {
 }
 
 .video-description {
-  margin-left: 24px;
+  margin-left: var(--space);
   width: 40%;
 }
 
 .video-description h4 {
-  font-size: 24px;
+  font-size: var(--space);
 }
 
 .background-text {
@@ -152,18 +155,18 @@ section.content {
 }
 
 .beatbox-categories {
-  margin-top: 24px;
+  margin-top: var(--space);
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 24px;
+  grid-gap: var(--space);
 }
 
 .beatbox-category-card {
   width: 100%;
   overflow: hidden;
   position: relative;
-  border-radius: 12px;
+  border-radius: var(--space-sm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,7 +175,7 @@ section.content {
 .beatbox-category-card .info {
   position: absolute;
   z-index: 1;
-  padding: 24px;
+  padding: var(--space);
 }
 
 .beatbox-category-card .info p.label {
@@ -197,7 +200,7 @@ section.content {
 .beatbox-category-card:hover .info span.beatbox-category-solo {
   max-height: 200px;
   opacity: 1;
-  padding-top: 12px;
+  padding-top: var(--space-sm);
 }
 
 .beatbox-category-img {
@@ -206,6 +209,60 @@ section.content {
   object-fit: cover;
   filter: grayscale(1) brightness(0.7);
   display: block;
+}
+
+footer {
+  background: var(--white);
+  padding: var(--space-lg) 0;
+}
+
+footer .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer p.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+footer .links ul {
+  margin-top: var(--space);
+  list-style: none;
+
+}
+
+footer .links ul a {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+footer .links ul a:hover {
+  color: var(--text-color-content);
+  transition: 0.2s;
+}
+
+footer .links ul a svg {
+  margin-right: var(--space-sm);
+}
+
+footer .credits {
+  margin-left: var(--space);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+footer .credits .name {
+  margin-top: var(--space);
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-color-content);
+}
+
+footer .credits .email {
+  color: var(--text-color-content);
 }
 
 
