@@ -81,7 +81,7 @@ html {
 
 main {
   min-height: 100vh;
-  padding: var(--space-lg) var(--space);
+  padding: var(--space-lg) 0;
   padding-top: calc(var(--page-header-height) + var(--space-lg));
 }
 
@@ -229,7 +229,6 @@ footer p.title {
 footer .links ul {
   margin-top: var(--space);
   list-style: none;
-
 }
 
 footer .links ul a {
@@ -266,3 +265,35 @@ footer .credits .email {
 }
 
 
+@media screen and (max-width: 540px) {
+  .wrapper {
+    padding: 0 var(--space-sm);
+  }
+  .video-with-description {
+    flex-direction: column;
+  }
+  .youtube-video {
+    width: 100%;
+    height: 240px;
+  }
+
+  
+  .video-description {
+    margin-left: 0;
+    margin-top: var(--space);
+    width: 100%;
+  }
+
+  .beatbox-categories {
+    grid-template-columns: 1fr;
+  }
+
+  footer .wrapper {
+    display: block;
+  }
+  
+  footer .credits {
+    margin-left: 0;
+    margin-top: var(--space-lg);
+  }
+}
